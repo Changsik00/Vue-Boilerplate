@@ -1,5 +1,5 @@
 # vue
-
+```console
 Vue CLI v3.10.0
 ? Please pick a preset: (Use arrow keys)
   default (babel, eslint)
@@ -38,6 +38,7 @@ Vue CLI v3.10.0
 ? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.?
   In dedicated config files
 ❯ In package.json
+```
 
 ## Project setup
 
