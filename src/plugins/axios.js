@@ -7,9 +7,15 @@ import store from '../store'
 
 Vue.prototype.$axios = axios;
 
-axios.defaults.timeout = 3000;
+axios.defaults.timeout = 5000;
 axios.defaults.baseURL = "https://reqres.in/api/";
 
+function axisoErrorHandler (error) {
+    console.log("#@# Axios error", error)
+    store.dispatch("showSnackbar", error);
+    store.dispatch("hideLoading");
+    return Promise.reject(error.response);
+}
 
 axios.interceptors.request.use(
     config => {
@@ -17,9 +23,7 @@ axios.interceptors.request.use(
         return config;
     },
     error => {
-        console.log("#@# Axios error", error)
-        store.dispatch("hideLoading");
-        return Promise.reject(error.response);
+        return axisoErrorHandler(error);
     }
 );
 
@@ -29,8 +33,6 @@ axios.interceptors.response.use(
         return response;
     },
     error => {
-        console.log("#@# Axios error", error)
-        store.dispatch("hideLoading");
-        return Promise.reject(error.response);
+        return axisoErrorHandler(error);
     }
 );

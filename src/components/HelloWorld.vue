@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-layout justify-center row style="margin: 30px;">
+    <v-layout justify-center column style="margin: 30px; width: 200px; margin: auto">
         <v-btn outlined rounded color="primary" 
                :loading="loadingTest"
                :disabled="loadingTest" 
@@ -12,6 +12,9 @@
         </v-btn>
         <v-btn outlined rounded color="primary" @click="apiTest">
           <span class="mr-2">API Test</span>
+        </v-btn>
+        <v-btn outlined rounded color="primary" @click="showSnackbar">
+          <span class="mr-2">Snackbar Show</span>
         </v-btn>
       </v-layout>
     <v-layout text-center wrap>
@@ -144,9 +147,35 @@ export default {
     },
     apiTest() {
       this.$axios.get('/users?page=2')
-      .then(result => console.log("#@# result", result))
-      .catch(error => console.log("#@# error" , error));
+      .then(result => console.log("#@# result1", result))
+      .catch(error => console.log("#@# error1" , error));
+      this.$axios.get('/users/23')
+      .then(result => console.log("#@# result2", result))
+      .catch(error => console.log("#@# error2" , error));
+      this.$axios.get('/users?delay=3')
+      .then(result => console.log("#@# result3", result))
+      .catch(error => console.log("#@# error3" , error));
+
+      this.apiTest2();
+    },
+    async apiTest2() {
+      try {
+        const response1 = await this.$axios.get('/user?ID=12345');
+        console.log("#@# 1", response1);
+        const response3 = await this.$axios.get('/users?delay=3');
+        console.log("#@# 3", response3);
+        const response2 = await this.$axios.get('/users/23');
+        console.log("#@# 2", response2);
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    showSnackbar() {
+      this.$showSnackbar("this is snackbar test<br>adasdf<br>adasdf<br>adasdf");
     }
   }
 };
 </script>
+<style lang="scss">
+
+</style>

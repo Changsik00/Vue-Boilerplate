@@ -12,6 +12,7 @@
       <HelloWorld/>
     </v-content>
     <Loading />
+    <Snackbar />
   </v-app>
 </template>
 
