@@ -1,0 +1,27 @@
+// https://developers-kr.googleblog.com/2015/10/noto.html
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    word-break: keep-all;
+}
+
+.title1 {
+    @include font(24px, bold, $grey6);
+    @include tablet {
+        @include font(36px, bold, $grey6);
+    }
+    @include desktop {
+        @include font(36px, bold, $grey6);
+    }
+}
+
+.title2 {
+    @include font(20px, bold, $grey6);
+    @include tablet {
+        @include font(30px, bold, $grey6);
+    }
+    @include desktop {
+        @include font(30px, bold, $grey6);
+    }
+}

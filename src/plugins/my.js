@@ -2,6 +2,12 @@ import Vue from "vue";
 import store from '../store'
 
 const MyPlugin = function(Vue) {
+  Vue.prototype.$showLoading = () => {
+    store.dispatch("showLoading");
+  };
+  Vue.prototype.$hideLoading = () => {
+    store.dispatch("hideLoading");
+  };
   Vue.prototype.$showSnackbar = message => {
     store.dispatch("showSnackbar" , message);
   };

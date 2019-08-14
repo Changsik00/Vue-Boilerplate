@@ -1,25 +1,29 @@
 <template>
   <v-container>
     <v-layout justify-center column style="margin: 30px; width: 200px; margin: auto">
-        <v-btn outlined rounded color="primary" 
+        <div class="mt20 test" style="text-align: center;">
+          test adfasdfasf
+        </div>
+        <v-btn class="mt30"
+               outlined rounded color="primary" 
                :loading="loadingTest"
                :disabled="loadingTest" 
                @click="showButtonLoading">
                <span class="mr-2">Loading</span>
         </v-btn>
-        <v-btn outlined rounded color="primary" @click="showLoading">
+        <v-btn class="mt10" outlined rounded color="primary" @click="showLoading">
           <span class="mr-2">Loading2</span>
         </v-btn>
-        <v-btn outlined rounded color="primary" @click="apiTest">
+        <v-btn class="mt10" outlined rounded color="primary" @click="apiTest">
           <span class="mr-2">API Test</span>
         </v-btn>
-        <v-btn outlined rounded color="primary" @click="showSnackbar">
+        <v-btn class="mt10" outlined rounded color="primary" @click="showSnackbar">
           <span class="mr-2">Snackbar Show</span>
         </v-btn>
       </v-layout>
     <v-layout text-center wrap>
       <v-flex xs12>
-        <v-img :src="require('../assets/logo.svg')"
+        <v-img :src="require('../assets/img/logo.svg')"
                 class="my-3"
                 contain 
                 height="200">
@@ -177,5 +181,9 @@ export default {
 };
 </script>
 <style lang="scss">
-
+.test {
+  @include tablet {
+    background-color: aliceblue;
+  }
+}
 </style>

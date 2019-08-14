@@ -1,0 +1,82 @@
+@import "mixin.scss";
+@import "color.scss";
+@import "font.scss";
+@import "reset.scss";
+
+.mobile-only {
+    display: inline-block;
+
+    @include tablet {
+        display: none;
+    }
+
+    @include desktop {
+        display: none;
+    }
+}
+
+.tablet-only {
+    display: none;
+
+    @include tablet {
+        display: inline-block;
+    }
+
+    @include desktop {
+        display: none;
+    }
+}
+
+.desktop-only {
+    display: none;
+
+    @include tablet {
+        display: none;
+    }
+
+    @include desktop {
+        display: inline-block;
+    }
+}
+
+.m20 {
+    margin: 20px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.mt50 {
+    margin-top: 50px;
+}
+
+.ml10 {
+    margin-left: 10px
+}
+
+.ml20 {
+    margin-left: 20px
+}
+
+.ml30 {
+    margin-left: 30px
+}
+
+.my-container {
+    max-width: $desktop-width !important;
+    margin: auto;
+    padding: 30px;
+}

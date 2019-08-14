@@ -7,6 +7,7 @@ import vuetify from './plugins/vuetify';
 import './plugins/axios';
 import './plugins/my';
 
+import './assets/css/common.scss'
 
 // https://vuejs.org/v2/guide/components-registration.html
 const Loading = () => import( /* webpackChunkName: "Header" */ "./components/Loading.vue");
