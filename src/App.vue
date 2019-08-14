@@ -7,9 +7,8 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
-
     <v-content>
-      <HelloWorld/>
+       <router-view/>
     </v-content>
     <Loading />
     <Snackbar />

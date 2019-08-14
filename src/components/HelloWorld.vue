@@ -20,6 +20,9 @@
         <v-btn class="mt10" outlined rounded color="primary" @click="showSnackbar">
           <span class="mr-2">Snackbar Show</span>
         </v-btn>
+        <v-btn class="mt10" outlined rounded color="primary" @click="toAbout">
+          <span class="mr-2">To About</span>
+        </v-btn>
       </v-layout>
     <v-layout text-center wrap>
       <v-flex xs12>
@@ -176,6 +179,11 @@ export default {
     },
     showSnackbar() {
       this.$showSnackbar("this is snackbar test<br>adasdf<br>adasdf<br>adasdf");
+    },
+    toAbout() {
+      console.log("#@# to about")
+      // this.$router.push('about');
+      this.$router.push({name: 'about'});
     }
   }
 };
