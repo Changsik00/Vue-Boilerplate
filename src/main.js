@@ -9,6 +9,9 @@ import './plugins/my';
 
 import './assets/css/common.scss'
 
+import VeeValidate from 'vee-validate';
+ Vue.use(VeeValidate);
+
 // https://vuejs.org/v2/guide/components-registration.html
 const Loading = () => import( /* webpackChunkName: "Header" */ "./components/Loading.vue");
 const Snackbar = () => import( /* webpackChunkName: "Snackbar" */ "./components/Snackbar.vue");
