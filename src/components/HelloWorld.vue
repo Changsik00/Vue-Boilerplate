@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-layout justify-center column style="margin: 30px; width: 200px; margin: auto">
-        <div class="mt20 test" style="text-align: center;">
-          test adfasdfasf
+        <div class="mt20 test title1" style="text-align: center;">
+          css test
         </div>
         <v-btn class="mt30"
                outlined rounded color="primary" 
